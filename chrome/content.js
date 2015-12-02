@@ -12,7 +12,7 @@ var deletedCount = 0;
 var xpathPatterns = [ ];
 
 var badWords = [
-	'donald', 'trump'
+	'donald', 'trump', 'donald trump', 'john'
 	];
 
 	for(var i = 0; i < badWords.length; i++)
@@ -22,7 +22,7 @@ var badWords = [
 		xpathPatterns.push(
 
 		//text nodes
-		"//text()[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdeghijklmnopqrstuvwxyz'),, '" + word + "')]",
+		"//text()[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdeghijklmnopqrstuvwxyz'), '" + word + "')]",
 
 		// hrefs and imgs
 		"//a[contains(translate(@href, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),'" + word + "')]",
